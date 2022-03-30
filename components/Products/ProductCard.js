@@ -1,13 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useRouter } from "next/router";
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Stack,
-  Button,
-} from "@mui/material";
+import { Card, CardMedia, CardContent, Typography, Stack } from "@mui/material";
 
 function ProductCard({ slug, name, price, regularPrice, sale, img, alt }) {
   let strValue = sale;
@@ -23,7 +16,7 @@ function ProductCard({ slug, name, price, regularPrice, sale, img, alt }) {
   };
 
   return (
-    <Card sx={{ minHeight: 400 }}>
+    <Card sx={{ minHeight: 400 }} onClick={(e) => singelProduct(slug, e)}>
       <CardMedia component="img" alt={alt} height="274" width="280" src={img} />
       <CardContent>
         <Typography variant="subtitle2" sx={{ fontWeight: "bold" }}>
@@ -43,7 +36,6 @@ function ProductCard({ slug, name, price, regularPrice, sale, img, alt }) {
           <Typography variant="subtitle2">${price}</Typography>
         )}
       </CardContent>
-      <Button onClick={(e) => singelProduct(slug, e)}>PLZ</Button>
     </Card>
   );
 }
