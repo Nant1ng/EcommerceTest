@@ -30,6 +30,7 @@ function product({ req, res }) {
 
   return (
     <div>
+      <Paper />
       <h1>Hello</h1>
       <h1>{product.name}</h1>
       {product.short_description}
